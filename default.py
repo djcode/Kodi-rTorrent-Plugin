@@ -43,7 +43,7 @@ __date__ = "08/01/2010"
 # __svn_revision__ = "$Revision$"
 # __XBMC_Revision__ = "19001"
 
-SCGI_PORT = xbmcplugin.getSetting("scgi_port")
+SCGI_PORT = xbmcplugin.getSetting(int(sys.argv[1]),"scgi_port")
 SCGI_SERVER = 'scgi://127.0.0.1:'+str(SCGI_PORT)
 
 #establishing connection
