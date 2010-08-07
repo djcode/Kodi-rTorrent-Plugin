@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Errors -->
+    <string id="30900">Error!</string>
+
+
+    <!-- item skin -->
+    <string id="30940">Updated:</string>
+    <string id="30941">Author:</string>
+
+    <!-- Category -->
+    <string id="30950">Subscriptions</string>
+
+
+    <!-- Settings -->
+    <string id="30000">SCGI Port</string>
+
+    <!-- compatible messages -->
+    <string id="30700">version</string>
+    <string id="30701">This version of %s requires an</string>
+    <string id="30702">XBMC revision of %s or greater to run.</string>
+    <string id="30703">Please update your XBMC.</string>
+
+</strings>
