@@ -4,6 +4,7 @@ import sys
 import os
 import urllib
 import xbmc
+import xbmcaddon
 import xbmcgui
 import xbmcplugin
 
@@ -34,6 +35,7 @@ import xmlrpc2scgi
 
 # plugin constants
 __plugin__ = "RTorrent"
+__addonID__= "plugin.program.rTorrent"
 __author__ = "Daniel Jolly"
 __url__ = "http://www.danieljolly.com"
 __credits__ = "Team XBMC for amazing XBMC! Jari \"Rakshasa\" Sundell, the developer of the fantastic rTorrent"
@@ -43,8 +45,12 @@ __date__ = "08/01/2010"
 # __svn_revision__ = "$Revision$"
 # __XBMC_Revision__ = "19001"
 
-SCGI_PORT = xbmcplugin.getSetting(int(sys.argv[1]),"scgi_port")
-SCGI_SERVER = 'scgi://127.0.0.1:'+str(SCGI_PORT)
+__addon__ = xbmcaddon.Addon( __addonID__ )
+__settings__ = __addon__
+__language__ = xbmc.getLocalizedString
+
+SCGI_PORT = _settings_.getSetting(int("scgi_port")
+SCGI_SERVER = 'scgi://localhost:'+str(SCGI_PORT)
 
 #establishing connection
 # TODO: Add checking to make sure it establishes correctly
@@ -199,7 +205,7 @@ def action(method, arg1, arg2, arg3):
 	if method.find('erase')!=-1:
 		dialog = xbmcgui.Dialog()
 		#Need to make this text part of the language file
-		ret = dialog.yesno('Delete Download', 'Are you sure you would like to remove this download?')
+		ret = dialog.yesno('Delete Download', 'Are you sure you want to delete this download?')
 		if ret==True:
 			allok = 1
 	else:
@@ -213,7 +219,7 @@ def action(method, arg1, arg2, arg3):
 			function = 'rtc.'+method+'("'+arg1+'","'+arg2+'")'
 		else:
 			function = 'rtc.'+method+'("'+arg1+'")'
-		print function	
+		#print function	
 		exec function
 		xbmc.executebuiltin('Container.Refresh')
 	
