@@ -49,7 +49,7 @@ __addon__ = xbmcaddon.Addon( __addonID__ )
 __settings__ = __addon__
 __language__ = xbmc.getLocalizedString
 
-SCGI_PORT = __settings__.getSetting(int("scgi_port"))
+SCGI_PORT = __settings__.getSetting("scgi_port")
 SCGI_SERVER = 'scgi://localhost:'+str(SCGI_PORT)
 
 #establishing connection
