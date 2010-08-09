@@ -3,9 +3,7 @@
 	<category label="30080">
 		<setting id="scgi_server" type="text" label="30001" default="localhost" />
 		<setting id="scgi_port" type="integer" label="30002" default="5000" />
-		<setting id="scgi_username" type="text" label="30003" default="" />
-		<setting id="scgi_password" type="text" option="hidden" label="30004" default="" />
+		<setting id="scgi_username" type="text" label="30003" default="none" />
+		<setting id="scgi_password" type="text" option="hidden" label="30004" default="none" />
 	</category>
-</settings>
-	
 </settings>
