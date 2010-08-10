@@ -46,7 +46,7 @@ __date__ = "08/01/2010"
 
 __addon__ = xbmcaddon.Addon( __addonID__ )
 __settings__ = __addon__
-__language__ = xbmc.getLocalizedString
+__language__ = __addon__.getLocalizedString
 
 
 	
@@ -140,7 +140,7 @@ def main():
 		else:
 			li_name = dld_name	
 
-		cm = [cm_action, \
+		cm = [cm_action]  , \
 			(__language__(30102),"xbmc.runPlugin(%s?mode=action&method=d.erase&arg1=%s)" % ( sys.argv[0], dld_hash)), \
 			(__language__(30120),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=3)" % ( sys.argv[0], dld_hash)), \
 			(__language__(30121),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=2)" % ( sys.argv[0], dld_hash)), \
