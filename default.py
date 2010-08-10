@@ -132,9 +132,9 @@ def main():
 		tbn=getIcon(dld_size_files,dld_is_active,dld_complete,dld_priority)		
 		
 		if dld_is_active==1:
-			cm_action = __language__('30101'),"xbmc.runPlugin(%s?mode=action&method=d.stop&arg1=%s)" % ( sys.argv[0], dld_hash)
+			cm_action = __language__(30101),"xbmc.runPlugin(%s?mode=action&method=d.stop&arg1=%s)" % ( sys.argv[0], dld_hash)
 		else:
-			cm_action = __language__('30100'),"xbmc.runPlugin(%s?mode=action&method=d.start&arg1=%s)" % ( sys.argv[0], dld_hash)
+			cm_action = __language__(30100),"xbmc.runPlugin(%s?mode=action&method=d.start&arg1=%s)" % ( sys.argv[0], dld_hash)
 		if dld_percent_complete<100:
 			li_name = dld_name+' ('+str(dld_percent_complete)+'%)'
 		else:
