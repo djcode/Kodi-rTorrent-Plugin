@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
     <!-- Settings -->
+	<string id="30000">Use SCGI Port or Domain Socket</string>
 	<string id="30001">Server Name</string>
 	<string id="30002">Server Port</string>
-	<string id="30003">Username</string>
-	<string id="30004">Password</string>
-
-	<!-- Settings  - Categories -->
+	<string id="30003">Domain Socket</string>
+	
+	<!-- Settings -  Enum Choices -->
+	<string id="30050">SCGI Port</string>
+	<string id="30051">Domain Socket</string>
+	
+	<!-- Settings - Categories -->
 	<string id="30080">Connection</string>
 	
 	

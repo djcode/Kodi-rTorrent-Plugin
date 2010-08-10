@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
 	<category label="30080">
-		<setting id="scgi_server" type="text" label="30001" default="localhost" />
-		<setting id="scgi_port" type="integer" label="30002" default="5000" />
-		<setting id="scgi_username" type="text" label="30003" default="none" />
-		<setting id="scgi_password" type="text" option="hidden" label="30004" default="none" />
+		<setting id="use_port" type="enum" label="30000" lvalues="30050|30051" default="0"/>
+		<setting id="scgi_server" type="text" visible="eq(-1,0)" label="30001" default="localhost" />
+		<setting id="scgi_port" type="number" visible="eq(-2,0)" label="30002" default="5000" />
+		<setting id="loc_domain_sock" type="file" visible="eq(-3,1)" source="\" label="30003" default="" />
 	</category>
 </settings>
