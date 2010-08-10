@@ -49,12 +49,19 @@ __addon__ = xbmcaddon.Addon( __addonID__ )
 __settings__ = __addon__
 __language__ = xbmc.getLocalizedString
 
-SCGI_PORT = __settings__.getSetting("scgi_port")
-SCGI_SERVER = 'scgi://localhost:'+str(SCGI_PORT)
+
+	
+if int(__settings__.getSetting('use_socket')) == 1
+	SCGI_CONNECTION = 'scgi://'+__settings__.getSetting('domain_socket')
+else
+	SCGI_PORT = __settings__.getSetting('scgi_port')
+	SCGI_SERVER = __settings__.getSetting('scgi_server')
+	SCGI_CONNECTION = 'scgi://'+SCGI_SERVER+':'+str(SCGI_PORT)
+
 
 #establishing connection
 # TODO: Add checking to make sure it establishes correctly
-rtc = xmlrpc2scgi.RTorrentXMLRPCClient(SCGI_SERVER)
+rtc = xmlrpc2scgi.RTorrentXMLRPCClient(SCGI_CONNECTION)
 
 #logging with xbmc
 # xbmc.log("Loaded rTorrent Control plugin", xbmc.LOGNOTICE )
@@ -131,9 +138,9 @@ def main():
 		tbn=getIcon(dld_size_files,dld_is_active,dld_complete,dld_priority)		
 		
 		if dld_is_active==1:
-			cm_action = __language__(30101),"xbmc.runPlugin(%s?mode=action&method=d.stop&arg1=%s)" % ( sys.argv[0], dld_hash)
+			cm_action = __language__('30101'),"xbmc.runPlugin(%s?mode=action&method=d.stop&arg1=%s)" % ( sys.argv[0], dld_hash)
 		else:
-			cm_action = __language__(30100),"xbmc.runPlugin(%s?mode=action&method=d.start&arg1=%s)" % ( sys.argv[0], dld_hash)
+			cm_action = __language__('30100'),"xbmc.runPlugin(%s?mode=action&method=d.start&arg1=%s)" % ( sys.argv[0], dld_hash)
 		if dld_percent_complete<100:
 			li_name = dld_name+' ('+str(dld_percent_complete)+'%)'
 		else:
