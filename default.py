@@ -273,7 +273,7 @@ except:
 #print "Arg2: "+str(arg2)
 #print "URL: "+str(url)
 
-if mode==None||mode=='files'||mode=='action'
+if mode==None or mode=='files' or mode=='action':
 	# plugin dependant imports
 	#custom xmlrpc2scgi script that loads the Python 2.6 module of xmlrpclib
 	import xmlrpc2scgi
