@@ -50,9 +50,9 @@ __language__ = xbmc.getLocalizedString
 
 
 	
-if int(__settings__.getSetting('use_socket')) == 1
+if int(__settings__.getSetting('use_socket')) == 1:
 	SCGI_CONNECTION = 'scgi://'+__settings__.getSetting('domain_socket')
-else
+else:
 	SCGI_PORT = __settings__.getSetting('scgi_port')
 	SCGI_SERVER = __settings__.getSetting('scgi_server')
 	SCGI_CONNECTION = 'scgi://'+SCGI_SERVER+':'+str(SCGI_PORT)
