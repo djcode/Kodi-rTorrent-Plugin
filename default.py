@@ -17,8 +17,11 @@ import xbmcplugin
 # Dld Stopped & File Don't Download: Red
 
 #Set plugin paths
+# Current Working Directory
 PATH_CWD = xbmc.translatePath(os.getcwd())
+# Directory containing extra libraries
 PATH_LIB = xbmc.translatePath(os.path.join(PATH_CWD, 'resources', 'lib'))
+# Directory containing status icons for torrents
 PATH_ICONS = xbmc.translatePath(os.path.join(PATH_CWD,'resources','icons'))
 
 print PATH_CWD
@@ -28,10 +31,6 @@ xbmcplugin.setPluginFanart(int(sys.argv[1]), PATH_CWD+'fanart.jpg')
 
 #adding plugin libary to python library path
 sys.path.append (PATH_LIB)
-
-# plugin dependant imports
-#custom xmlrpc2scgi script that loads the Python 2.6 module of xmlrpclib
-import xmlrpc2scgi
 
 # plugin constants
 __plugin__ = "RTorrent"
@@ -57,11 +56,6 @@ else
 	SCGI_PORT = __settings__.getSetting('scgi_port')
 	SCGI_SERVER = __settings__.getSetting('scgi_server')
 	SCGI_CONNECTION = 'scgi://'+SCGI_SERVER+':'+str(SCGI_PORT)
-
-
-#establishing connection
-# TODO: Add checking to make sure it establishes correctly
-rtc = xmlrpc2scgi.RTorrentXMLRPCClient(SCGI_CONNECTION)
 
 #logging with xbmc
 # xbmc.log("Loaded rTorrent Control plugin", xbmc.LOGNOTICE )
@@ -146,7 +140,7 @@ def main():
 		else:
 			li_name = dld_name	
 
-		cm = [cm_action,('Erase Download',"xbmc.runPlugin(%s?mode=action&method=d.erase&arg1=%s)" % ( sys.argv[0], dld_hash)), \
+		cm = [cm_action,(__language__(30102),"xbmc.runPlugin(%s?mode=action&method=d.erase&arg1=%s)" % ( sys.argv[0], dld_hash)), \
 			(__language__(30120),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=3)" % ( sys.argv[0], dld_hash)), \
 			(__language__(30121),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=2)" % ( sys.argv[0], dld_hash)), \
 			(__language__(30122),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=1)" % ( sys.argv[0], dld_hash)), \
@@ -198,9 +192,9 @@ def files(hash,numfiles):
 
 #XBMC file player code
 def play(url,arg1):
+	# Check to see if the file has completely downloaded.
 	if int(arg1)==0:
 		dialog = xbmcgui.Dialog()
-		#Need to make this text part of the language file
 		ret = dialog.yesno(__language__(30150), __language__(30151), __language__(30152))
 		if ret==True:
 			xbmc.Player().play(url);
@@ -278,7 +272,16 @@ except:
 #print "Arg1: "+str(arg1)
 #print "Arg2: "+str(arg2)
 #print "URL: "+str(url)
-		
+
+if mode==None||mode=='files'||mode=='action'
+	# plugin dependant imports
+	#custom xmlrpc2scgi script that loads the Python 2.6 module of xmlrpclib
+	import xmlrpc2scgi
+
+	#establishing connection
+	# TODO: Add checking to make sure it establishes correctly
+	rtc = xmlrpc2scgi.RTorrentXMLRPCClient(SCGI_CONNECTION)
+
 if mode==None:
         main()
      
