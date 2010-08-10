@@ -7,7 +7,7 @@
 	<string id="30004">Password</string>
 
 	<!-- Settings  - Categories -->
-	<string id="30080">rTorrent Connection Settings</string>
+	<string id="30080">Connection</string>
 	
 	
 	<!-- Context Menus - Torrent Controls -->
@@ -16,10 +16,10 @@
 	<string id="30102">Erase Download</string>
 	
 	<!-- Context Menus - Priorities -->
-	<string id="30120">Set Priority: High<string>
-	<string id="30121">Set Priority: Normal<string>
-	<string id="30122">Set Priority: Low<string>
-	<string id="30123">Set Priority: Idle<string>
+	<string id="30120">Set Priority: High</string>
+	<string id="30121">Set Priority: Normal</string>
+	<string id="30122">Set Priority: Low</string>
+	<string id="30123">Set Priority: Idle</string>
 	<string id="30124">Set Priority: Dont Download</string>
 	
 	<!-- Dialog Boxes -->
@@ -29,8 +29,6 @@
 	<string id="30153">Delete Download</string>
 	<string id="30154">Are you sure you want to delete this download</string>
 	
-	
     <!-- Errors -->
     <string id="30900">Error!</string>
-
 </strings>
