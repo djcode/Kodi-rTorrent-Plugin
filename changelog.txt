@@ -1,4 +1,9 @@
-0.9.1 - 
+0.9.2 - 2010/08/12
+* Completely language-neutral. Translations welcome!
+* Added support for rTorrent domain sockets
+* Conditional settings menu
+
+0.9.1 
 * Wrote README and attached proper acknowledgements
 * Wrote this changelog.txt
 * Fixed bugs with getting localized strings and settings
