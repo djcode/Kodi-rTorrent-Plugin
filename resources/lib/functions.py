@@ -61,21 +61,3 @@ def getIcon(isdir,active,complete,p):
 # Dld P: Low   : Purple
 # Dld Priority: Idle  : Orange
 # Dld Stopped & File Don't Download: Red
-
-# Check to see if we can connect to rTorrent. If not ask, to open Settings page. Good practice for first time user experience!
-def connectionOK(): 
-	#establishing connection
-	# TODO: Add checking to make sure it establishes correctly
-	#try:
-		g.rtc.system.client_version()
-	#except:
-	#	return False
-	#else:
-		return True;
-#		dialog = xbmcgui.Dialog()
-#		ret = dialog.yesno(__language__(30155),__language__(30156),__language__(30157))
-#		if ret==True:
-#			__addon__.openSettings()
-#			connectionOK()
-#		else:
-#			mode='exit'

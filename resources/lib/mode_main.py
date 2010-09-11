@@ -1,4 +1,5 @@
 # Imports
+import os
 import xbmcgui
 import xbmcplugin
 from functions import *
@@ -52,6 +53,6 @@ def main():
 				li,isFolder=True,totalItems=dlds_len): break
 		else:
 			if not xbmcplugin.addDirectoryItem(int(sys.argv[1]), \
-				sys.argv[0]+"?mode=play&arg1="+str(dld_complete)+"&url="+urllib.quote_plus(xbmc.translatePath(os.path.join(dld_directory,dld_name))), \
+				sys.argv[0]+"?mode=play&arg1=0&hash="+dld_hash, \
 				li,totalItems=dlds_len): break
 	xbmcplugin.endOfDirectory(int(sys.argv[1]), cacheToDisc=False)

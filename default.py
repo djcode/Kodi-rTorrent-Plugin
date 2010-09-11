@@ -30,10 +30,6 @@ arg3=None
 test=False
 
 try:
-        url=urllib.unquote_plus(params["url"])
-except:
-        pass
-try:
         hash=str(params["hash"])
 except:
         pass
