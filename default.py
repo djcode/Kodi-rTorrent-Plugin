@@ -6,8 +6,8 @@ import xbmc
 import xbmcgui
 import xbmcplugin
 
-#adding plugin libary to python library path
-sys.path.append (xbmc.translatePath(os.path.join(os.getcwd(), 'resources', 'lib')))
+# Adding plugin library to python library path
+sys.path.append(xbmc.translatePath(os.path.join(os.getcwd(), 'resources', 'lib')))
 
 #extra imports
 from functions import *
@@ -61,14 +61,9 @@ try:
         arg3=str(urllib.unquote_plus(params["arg3"]))
 except:
         pass
-		
-#print "Params: "+str(params) print "Mode: "+str(mode) print "Method: "+str(method) #print "Arg1: "+str(arg1) print "Arg2: "+str(arg2) print "URL: "+str(url)
 
 if mode==None or mode=='files' or mode=='action':
 
-	test=connectionOK()
-
-if test==True:
 	if mode==None:
 		from mode_main import *
 		main()
@@ -81,4 +76,4 @@ if test==True:
 
 if mode=='play':
 		from mode_play import *
-		main(url,arg1)
+		main(hash,arg1)
