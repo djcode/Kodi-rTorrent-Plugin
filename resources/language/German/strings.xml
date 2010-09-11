@@ -5,6 +5,11 @@
 	<string id="30001">Server Name</string>
 	<string id="30002">Server Port</string>
 	<string id="30003">Domain Socket</string>
+	<string id="30004">Downloading</string>
+	<string id="30005">Complete</string>
+
+	<!-- Settings - Labels -->
+	<string id="30040">Remote Folders (If rTorrent is on a remote computer)</string>
 	
 	<!-- Settings -  Enum Choices -->
 	<string id="30050">SCGI Port</string>
@@ -12,7 +17,7 @@
 	
 	<!-- Settings - Categories -->
 	<string id="30080">Verbindung</string>
-	
+	<string id="30081">Remote</string>
 	
 	<!-- Context Menus - Torrent Controls -->
 	<string id="30100">Starte Download</string>

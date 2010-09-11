@@ -17,7 +17,7 @@
 	
 	<!-- Settings - Categories -->
 	<string id="30080">Connection</string>
-	<string id="30081">Playback</string>
+	<string id="30081">Remote</string>
 	
 	<!-- Context Menus - Torrent Controls -->
 	<string id="30100">Start Download</string>
