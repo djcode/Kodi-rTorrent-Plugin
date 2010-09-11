@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+Ôªø<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
     <!-- Settings -->
 	<string id="30000">Connection Type</string>
@@ -17,21 +17,21 @@
 	<!-- Context Menus - Torrent Controls -->
 	<string id="30100">Starte Download</string>
 	<string id="30101">Stoppe Download</string>
-	<string id="30102">Lˆsche Download</string>
+	<string id="30102">L√∂sche Download</string>
 	
 	<!-- Context Menus - Priorities -->
-	<string id="30120">Setze Priorit‰t: Hoch</string>
-	<string id="30121">Setze Priorit‰t: Normal</string>
-	<string id="30122">Setze Priorit‰t: Niedrig</string>
-	<string id="30123">Setze Priorit‰t: Idle</string>
-	<string id="30124">Setze Priorit‰t: Kein Download</string>
+	<string id="30120">Setze Priorit√§t: Hoch</string>
+	<string id="30121">Setze Priorit√§t Normal</string>
+	<string id="30122">Setze Priorit√§t: Niedrig</string>
+	<string id="30123">Setze Priorit√§t Idle</string>
+	<string id="30124">Setze Priorit√§t: Kein Download</string>
 	
 	<!-- Dialog Boxes -->
 	<string id="30150">Datei wiedergeben</string>
-	<string id="30151">Die Datei wurde nicht vollst‰ndig heruntergeladen.</string>
+	<string id="30151">Die Datei wurde nicht vollst√§ndig heruntergeladen.</string>
 	<string id="30152">Soll diese Datei wiedergegeben werden?</string>
-	<string id="30153">Lˆsche Download</string>
-	<string id="30154">Soll dieser Download wirklich gelˆscht werden?</string>
+	<string id="30153">L√∂sche Download</string>
+	<string id="30154">Soll dieser Download wirklich gel√∂scht werden?</string>
 	
     <!-- Errors -->
     <string id="30900">Fehler!</string>
