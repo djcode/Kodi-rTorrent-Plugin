@@ -9,7 +9,7 @@ import xmlrpc2scgi
 
 # Addon constants
 __plugin__ = "RTorrent"
-__addonID__= "plugin.program.rtorrent"
+__addonID__= os.path.basename(os.getcwd())
 __author__ = "Daniel Jolly"
 __url__ = "http://www.danieljolly.com"
 __credits__ = "See README"
@@ -60,4 +60,3 @@ if __setting__('use_socket')=='0': # Currently this feature is untested with rem
 		__islocal__=0
 else:
 		__islocal__=1
-print "the plugin is local to where rTorrent is running? "+str(__islocal__)
