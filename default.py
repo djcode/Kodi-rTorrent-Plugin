@@ -7,7 +7,7 @@ import xbmcgui
 import xbmcplugin
 
 # Adding plugin library to python library path
-sys.path.append(xbmc.translatePath(os.path.join(os.getcwd(), 'resources', 'lib')))
+sys.path.append(os.path.join(os.getcwd(), 'resources', 'lib'))
 
 #extra imports
 from functions import *
@@ -59,7 +59,6 @@ except:
         pass
 
 if mode==None or mode=='files' or mode=='action':
-
 	if mode==None:
 		from mode_main import *
 		main()
