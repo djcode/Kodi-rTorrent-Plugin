@@ -33,7 +33,7 @@
 # Contact:  Glenn Washburn <crass@berlios.de>
 
 import sys, cStringIO as StringIO
-import xmlrpclib26, urllib, urlparse, socket
+import xmlrpclib, urllib, urlparse, socket
 
 # this allows us to parse scgi urls just like http ones
 from urlparse import uses_netloc
@@ -47,7 +47,7 @@ def do_scgi_xmlrpc_request(host, methodname, params=()):
         params:     tuple of simple python objects
         returns:    xmlrpc response
     """
-    xmlreq = xmlrpclib26.dumps(params, methodname)
+    xmlreq = xmlrpclib.dumps(params, methodname)
     xmlresp = SCGIRequest(host).send(xmlreq)
     #~ print xmlresp
     
@@ -62,7 +62,7 @@ def do_scgi_xmlrpc_request_py(host, methodname, params=()):
         returns:    xmlrpc response converted to python
     """
     xmlresp = do_scgi_xmlrpc_request(host, methodname, params)
-    return xmlrpclib26.loads(xmlresp)[0][0]
+    return xmlrpclib.loads(xmlresp)[0][0]
 
 class SCGIRequest(object):
     """ See spec at: http://python.ca/scgi/protocol.txt
@@ -173,10 +173,10 @@ class RTorrentXMLRPCClient(object):
     def __call__(self, *args):
         #~ print "%s%r"%(self.methodname, args)
         scheme, netloc, path, query, frag = urlparse.urlsplit(self.url)
-        xmlreq = xmlrpclib26.dumps(args, self.methodname)
+        xmlreq = xmlrpclib.dumps(args, self.methodname)
         if scheme == 'scgi':
             xmlresp = SCGIRequest(self.url).send(xmlreq)
-            return xmlrpclib26.loads(xmlresp)[0][0]
+            return xmlrpclib.loads(xmlresp)[0][0]
             #return do_scgi_xmlrpc_request_py(self.url, self.methodname, args)
         elif scheme == 'http':
             raise Exception('Unsupported protocol')
@@ -229,7 +229,7 @@ def main(argv):
     if not output_python:
         print respxml
     else:
-        print xmlrpclib26.loads(respxml)[0][0]
+        print xmlrpclib.loads(respxml)[0][0]
 
 if __name__ == "__main__":
     main(sys.argv[1:])
