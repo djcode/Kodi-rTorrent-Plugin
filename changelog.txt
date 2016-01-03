@@ -1,9 +1,14 @@
+1.16.1 - 2016/01/03
+* Bumped the python version to support the newer Kodi releases
+* Added Portugese (BR) thanks to rom232
+* Tested on Frodo, Gotham, Helix, Isengard and the Jarvis Beta. 
+
 0.11.7 - 2011/07/10
 * Moved to a x.<year>.<month> style of versioning. 
 * Officially changed icons and now use an easier to understand colour scheme.
 * Removed icon from the fanart as it didn't look right on all skin
 * Fixed bug with torrents containing 0 byte files
-* Fixed bug with muliple TCPIP interfaces
+* Fixed bug with multiple TCPIP interfaces
 * Added missing "Connection Failed" strings to all languages
 * Fixed addon descriptions.
 
