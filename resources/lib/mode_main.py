@@ -55,6 +55,7 @@ def main():
                 label=li_name,
                 iconImage=tbn, thumbnailImage=tbn)
         li.addContextMenuItems(items=cm, replaceItems=True)
+        li.setArt({'fanart': g.__addon__.getAddonInfo('fanart')})
         li.setInfo('video', {'title': li_name, 'size': dld_size_bytes})
         if dld_size_files > 1:
             if not xbmcplugin.addDirectoryItem(int(sys.argv[1]),

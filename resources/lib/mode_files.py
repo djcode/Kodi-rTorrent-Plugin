@@ -40,6 +40,7 @@ def main(hash, numfiles):
               (g.__lang__(30124),
                "xbmc.runPlugin(%s?mode=action&method=f.set_priority&arg1=%s&arg2=%s&arg3=0)" % (sys.argv[0], hash, i))]
         li.addContextMenuItems(items=cm, replaceItems=True)
+        li.setArt({'fanart': g.__addon__.getAddonInfo('fanart')})
         li.setInfo('video', {'title': li_name, 'size': f_size_bytes})
         if not xbmcplugin.addDirectoryItem(int(sys.argv[1]),
                                            sys.argv[0] + "?mode=play&arg1=" + str(i) + "&hash=" + hash,
