@@ -1,7 +1,5 @@
 # Imports
-import os
-import xbmc
-import xbmcgui
+import os, xbmc, xbmcgui
 import globals as g
 
 #XBMC file player code

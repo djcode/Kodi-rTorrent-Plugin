@@ -1,10 +1,7 @@
 #Imports
+import xbmcgui, xbmcplugin
 from functions import *
 import globals as g
-import xbmcgui
-import xbmcplugin
-import urllib
-import xbmc
 
 #Files inside a multi-file torrent code
 def main(hash,numfiles):

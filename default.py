@@ -1,14 +1,8 @@
 # main imports
-import sys
-import os
 import urllib
-import xbmc
-import xbmcaddon
-import xbmcgui
 
 #extra imports
 from resources.lib.functions import *
-import resources.lib.globals as g
 
 params=get_params()
 

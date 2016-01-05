@@ -1,7 +1,5 @@
 # Imports
-import os
-import xbmcgui
-import xbmcplugin
+import xbmcgui, xbmcplugin
 from functions import *
 import globals as g
 

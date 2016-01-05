@@ -1,6 +1,5 @@
 # Imports
-import os
-import sys
+import os, sys
 import globals as g
 
 # Get parameters script from Voinage's tutorial

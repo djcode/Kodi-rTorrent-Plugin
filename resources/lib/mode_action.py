@@ -1,6 +1,5 @@
 # Import
-import xbmc
-import xbmcgui
+import xbmc, xbmcgui
 import globals as g
 # Send action to rTorrent
 def main(method, arg1, arg2, arg3):
