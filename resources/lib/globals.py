@@ -7,8 +7,8 @@ __addonID__= "plugin.program.rtorrent"
 __author__ = "Daniel Jolly"
 __url__ = "http://www.danieljolly.com"
 __credits__ = "See README"
-__version__ = "0.10.1"
-__date__ = "25/09/2010"
+__version__ = "1.16.1"
+__date__ = "04/01/2016"
 
 
 #Set a variable for Addon info and language strings
