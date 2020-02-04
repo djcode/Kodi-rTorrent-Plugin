@@ -1,4 +1,4 @@
-# Imports
+''' Playing torrents '''
 import os
 import xbmc
 import xbmcgui
@@ -28,7 +28,7 @@ def main(hash,arg1):
 			dld_is_multi_file = int(g.rtc.d.is_multi_file(hash))
 			dld_complete = int(g.rtc.d.complete(hash))
 
-		# Create the path to file to be played 
+		# Create the path to file to be played
 		if dld_is_multi_file==0:
 			path = f_name
 		else:
@@ -47,7 +47,7 @@ def main(hash,arg1):
 		f_size_chunks = int(g.rtc.f.size_chunks(hash, arg1))
 
 	f_percent_complete = f_completed_chunks*100/f_size_chunks
-	
+
 	if f_percent_complete<100:
 		dialog = xbmcgui.Dialog()
 		ret = dialog.yesno(g.__lang__(30150), g.__lang__(30151), g.__lang__(30152))

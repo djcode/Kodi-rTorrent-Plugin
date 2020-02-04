@@ -6,7 +6,7 @@ from functions import *
 import globals as g
 from distutils.version import LooseVersion
 
-#Main program code	
+#Main program code
 def main():
 #	addonMenu();
 
@@ -32,8 +32,8 @@ def main():
 		dld_priority = dld[8]
 		dld_is_multi_file = dld[9]
 		dld_size_bytes = int(dld[10])
-		tbn=getIcon(dld_size_files,dld_is_active,dld_complete,dld_priority)		
-		
+		tbn=getIcon(dld_size_files,dld_is_active,dld_complete,dld_priority)
+
 		if dld_is_active==1:
 			cm_action = g.__lang__(30101),"xbmc.runPlugin(%s?mode=action&method=d.stop&arg1=%s)" % ( sys.argv[0], dld_hash)
 		else:
@@ -41,15 +41,15 @@ def main():
 		if dld_percent_complete<100:
 			li_name = dld_name+' ('+str(dld_percent_complete)+'%)'
 		else:
-			li_name = dld_name	
+			li_name = dld_name
 
 		cm = [cm_action, \
 			(g.__lang__(30102),"xbmc.runPlugin(%s?mode=action&method=d.erase&arg1=%s)" % ( sys.argv[0], dld_hash)), \
 			(g.__lang__(30120),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=3)" % ( sys.argv[0], dld_hash)), \
 			(g.__lang__(30121),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=2)" % ( sys.argv[0], dld_hash)), \
 			(g.__lang__(30122),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=1)" % ( sys.argv[0], dld_hash)), \
-			(g.__lang__(30123),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=0)" % ( sys.argv[0], dld_hash))]	
-			
+			(g.__lang__(30123),"xbmc.runPlugin(%s?mode=action&method=d.set_priority&arg1=%s&arg2=0)" % ( sys.argv[0], dld_hash))]
+
 		li = xbmcgui.ListItem( \
 			label=li_name, \
 			iconImage=tbn, thumbnailImage=tbn)

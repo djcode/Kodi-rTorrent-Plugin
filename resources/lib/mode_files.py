@@ -18,7 +18,7 @@ def main(hash,numfiles):
 		files = g.rtc.f.multicall(hash, 1, "f.path=","f.completed_chunks=","f.size_chunks=","f.priority=","f.size_bytes=")
 
 	i=0
-	for f in files:	
+	for f in files:
 		f_name = f[0]
 		f_completed_chunks = int(f[1])
 		f_size_chunks = int(f[2])
