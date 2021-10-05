@@ -3,24 +3,44 @@ import xbmc
 import xbmcgui
 import resources.lib.globals as g
 
-def main(method, arg1, arg2, arg3):
+def download_start(download_hash):
+    ''' Start download '''
+    xbmc.log('Starting download %s' % download_hash)
+    g.rtc.d.start(download_hash)
+
+def download_stop(download_hash):
+    ''' Stop download '''
+    xbmc.log('Stopping download %s' % download_hash)
+    g.rtc.d.stop(download_hash)
+
+def download_erase(download_hash):
+    ''' Erase download (with confirmation) '''
+    dialog = xbmcgui.Dialog()
+    confirm = dialog.yesno(g.__lang__(30153), g.__lang__(30154))
+    if confirm is True:
+        g.rtc.d.erase(download_hash)
+
+def download_priority(download_hash, priority):
+    ''' Set download priority '''
+    g.rtc.d.priority.set(download_hash, priority)
+
+def file_priority(file_hash, priority):
+    ''' Set file priority '''
+    g.rtc.f.priority.set(file_hash, priority)
+
+def main(method, **args):
     ''' Send action to rTorrent '''
-    allok = 0
-    if method.find('erase') != -1:
-        dialog = xbmcgui.Dialog()
-        ret = dialog.yesno(g.__lang__(30153), g.__lang__(30154))
-        if ret is True:
-            allok = 1
+    xbmc.log('Performing action %s with these arguments %s' % (method, args))
+    if method == "download_start":
+        download_start(args['download_hash'])
+    elif method == "download_stop":
+        download_stop(args['download_hash'])
+    elif method == "download_erase":
+        download_erase(args['download_hash'])
+    elif method == "download_priority":
+        download_priority(args['download_hash'], args['priority'])
+    elif method == "file_priority":
+        file_priority(args['file_hash'], args['priority'])
     else:
-        allok = 1
-    if allok == 1:
-        if arg3:
-            # only used at this stage to change priority on files in torrent
-            function = 'g.rtc.' + method + '("' + arg1 + '",' + arg2 + ',' + arg3 + ')'
-        elif arg2:
-            function = 'g.rtc.' + method + '("' + arg1 + '","' + arg2 + '")'
-        else:
-            function = 'g.rtc.' + method + '("' + arg1 + '")'
-        # print function
-        exec function
-        xbmc.executebuiltin('Container.Refresh')
+        xbmcgui.Dialog().ok('Error', 'Something went wrong.')
+    xbmc.executebuiltin('Container.Refresh')
