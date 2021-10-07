@@ -1,10 +1,20 @@
+2.21.9 - 2021/09/09
+* So many changes! Basically a complete rewrite.
+* Updated all code to work with Python 3 and Kodi 19
+* Added support to talk to XMLRPC over HTTP
+* Added support for new rTorrent XMLRPC API (thanks to WallyCZ)
+* Improved error handling of bad settings
+* Added support to show images in torrents as well as videos
+* Pre 9.x rTorrent API code removed
+* All code has been PyLint'ed
+
 1.16.1 - 2016/01/03
 * Bumped the python version to support the newer Kodi releases
 * Added Portugese (BR) thanks to rom232
-* Tested on Frodo, Gotham, Helix, Isengard and the Jarvis Beta. 
+* Tested on Frodo, Gotham, Helix, Isengard and the Jarvis Beta.
 
 0.11.7 - 2011/07/10
-* Moved to a x.<year>.<month> style of versioning. 
+* Moved to a x.<year>.<month> style of versioning.
 * Officially changed icons and now use an easier to understand colour scheme.
 * Removed icon from the fanart as it didn't look right on all skin
 * Fixed bug with torrents containing 0 byte files
@@ -33,7 +43,7 @@
 0.10.0
 * Now supports all platforms!
 * Complete code redesign (more modular, easier to maintain and add features)
-* Checks to see if it can connect to rTorrent before it connects (no more errors if improperly configured) 
+* Checks to see if it can connect to rTorrent before it connects (no more errors if improperly configured)
 
 0.9.3 - 2010/08/20
 * Added Russian translations thanks to runkov!
@@ -45,14 +55,14 @@
 * Added support for rTorrent domain sockets
 * Conditional settings menu
 
-0.9.1 
+0.9.1
 * Wrote README and attached proper acknowledgements
 * Wrote this changelog.txt
 * Fixed bugs with getting localized strings and settings
-* Updated English strings.xml to contain all English used in plugin 
-* Removed rtorrent.py - Old, unused and not license compatible 
+* Updated English strings.xml to contain all English used in plugin
+* Removed rtorrent.py - Old, unused and not license compatible
 * Resized fanart to 720p
-* Fixed bug when getting SCGI Port setting 
+* Fixed bug when getting SCGI Port setting
 
 0.9.0 - 2010/08/06
 * Resized images to suit addon specifications
