@@ -2,14 +2,11 @@
 # Imports
 import os
 import sys
-import xmlrpc.client
-from urllib.parse import urlparse
 import xbmc
 import xbmcaddon
-import xbmcgui
 import xbmcplugin
 import xbmcvfs
-from . import rtorrent_xmlrpc
+from . import rtorrentkodiclient as r
 
 # Addon constants
 __plugin__ = "RTorrent"
@@ -27,10 +24,13 @@ __lang__ = __addon__.getLocalizedString
 __cwd__ = __addon__.getAddonInfo('path')
 
 #Set plugin fanart
-xbmcplugin.setPluginFanart(int(sys.argv[1]), os.path.join(__cwd__,'resources','fanart.jpg'))
+xbmcplugin.setPluginFanart(int(sys.argv[1]),
+    xbmcvfs.translatePath(os.path.join(__cwd__,'resources','fanart.jpg')))
 
-# Connection constants
-# Check to see if addon is set to socket or port mode
+rtc = r.RTorrentKodiClient()
+
+__islocal__ = rtc.local()
+
 
 def plugin_exit():
     ''' Try to leave the plugin as cleanly as possible. '''

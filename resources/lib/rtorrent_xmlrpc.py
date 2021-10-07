@@ -1,3 +1,4 @@
+''' 3rd-party module (with some edits to bring it to Python3) that allows XMLRPC over SCGI '''
 #!/usr/bin/python
 
 # rtorrent_xmlrpc
@@ -85,36 +86,34 @@ import xmlrpc.client
 
 
 class SCGITransport(xmlrpc.client.Transport):
+    ''' SCGI extension of xmlrpc.client.Transport '''
     def single_request(self, host, handler, request_body, verbose=0):
         # Add SCGI headers to the request.
         headers = {'CONTENT_LENGTH': str(len(request_body)), 'SCGI': '1'}
         header = '\x00'.join(('%s\x00%s' % item for item in iter(headers.items()))) + '\x00'
         header = '%d:%s' % (len(header), header)
         request_body = '%s,%s' % (header, request_body)
-
         sock = None
+        if host:
+            host, port = urllib.parse.splitport(host)
+            addrinfo = socket.getaddrinfo(host, port, socket.AF_INET,
+                                          socket.SOCK_STREAM)
+            sock = socket.socket(*addrinfo[0][:3])
+            sock.connect(addrinfo[0][4])
+        else:
+            # This will raise a PyLint error on Windows! Disabling.
+            sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) # pylint: disable=E1101
+            sock.connect(handler)
 
-        try:
-            if host:
-                host, port = urllib.parse.splitport(host)
-                addrinfo = socket.getaddrinfo(host, port, socket.AF_INET,
-                                              socket.SOCK_STREAM)
-                sock = socket.socket(*addrinfo[0][:3])
-                sock.connect(addrinfo[0][4])
-            else:
-                sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-                sock.connect(handler)
+        self.verbose = verbose # pylint: disable=W0201
 
-            self.verbose = verbose
-
-            sock.send(bytes(request_body,'utf-8'))
-            return self.parse_response(sock.makefile())
-        finally:
-            if sock:
-                sock.close()
+        sock.send(bytes(request_body,'utf-8'))
+        response = self.parse_response(sock.makefile())
+        sock.close()
+        return response
 
     def parse_response(self, response):
-        p, u = self.getparser()
+        parser, target = self.getparser()
 
         response_body = ''
         while True:
@@ -124,19 +123,21 @@ class SCGITransport(xmlrpc.client.Transport):
             response_body += data
 
         # Remove SCGI headers from the response.
-        response_header, response_body = re.split(r'\n\s*?\n', response_body, maxsplit=1)
+        response_body = re.split(r'\n\s*?\n', response_body, maxsplit=1)[1]
 
         if self.verbose:
             print('body:', repr(response_body))
 
-        p.feed(response_body)
-        p.close()
+        parser.feed(response_body)
+        parser.close()
 
-        return u.close()
-
+        return target.close()
 
 class SCGIServerProxy(xmlrpc.client.ServerProxy):
-    def __init__(self, uri, transport=None, encoding=None, verbose=False,
+    ''' SCGI extension of xmlrpc.client.ServerProxy '''
+    # Disabling Pylint warning because it seems confused about __init__
+    # We also need this many arguments to replicate the parent ServerProxy object
+    def __init__(self, uri, transport=None, encoding=None, verbose=False, # pylint: disable=W0231 disable=R0913
                  allow_none=False, use_datetime=False):
         scheme, uri = urllib.parse.splittype(uri)
         if scheme not in ('scgi'):
@@ -144,57 +145,38 @@ class SCGIServerProxy(xmlrpc.client.ServerProxy):
         self.__host, self.__handler = urllib.parse.splithost(uri)
         if not self.__handler:
             self.__handler = '/'
-
         if transport is None:
             transport = SCGITransport(use_datetime=use_datetime)
         self.__transport = transport
-
-        self.__encoding = encoding
+        self.__encoding = encoding or 'utf-8'
         self.__verbose = verbose
         self.__allow_none = allow_none
 
-    def __close(self):
-        self.__transport.close()
-
     def __request(self, methodname, params):
-        # call a method on the remote server
-
         request = xmlrpc.client.dumps(params, methodname, encoding=self.__encoding,
-                                  allow_none=self.__allow_none)
-
+                        allow_none=self.__allow_none)
         response = self.__transport.request(
             self.__host,
             self.__handler,
             request,
             verbose=self.__verbose
             )
-
         if len(response) == 1:
             response = response[0]
-
         return response
 
     def __repr__(self):
         return (
-            "<SCGIServerProxy for %s%s>" %
-            (self.__host, self.__handler)
+            "<%s for %s%s>" %
+            (self.__class__.__name__, self.__host, self.__handler)
             )
 
-    __str__ = __repr__
-
     def __getattr__(self, name):
-        # magic method dispatcher
         return xmlrpc.client._Method(self.__request, name)
 
-    # note: to call a remote object with an non-standard name, use
-    # result getattr(server, "strange-python-name")(args)
-
     def __call__(self, attr):
-        """A workaround to get special attributes on the ServerProxy
-           without interfering with the magic __getattr__
-        """
         if attr == "close":
             return self.__close
-        elif attr == "transport":
+        if attr == "transport":
             return self.__transport
         raise AttributeError("Attribute %r not found" % (attr,))

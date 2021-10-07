@@ -11,34 +11,56 @@ from . import globals as g
 class RTorrentKodiClient:
     ''' Wrapper around xmlrpc calls '''
     def __init__(self):
+        self.success = True
+        self.make_connection()
+    def make_connection(self):
+        ''' Creates (and updates) the connection string from settings '''
         self.uri = urlparse(g.__setting__('uri'))
         if self.uri.scheme == 'scgi':
-            self.rtc = rtorrent_xmlrpc.SCGIServerProxy(self.uri.geturl())
+            self.connection = rtorrent_xmlrpc.SCGIServerProxy(self.uri.geturl())
         else:
-            self.rtc = xmlrpc.client.ServerProxy(self.uri.geturl())
-    def __getattr__(self, name):
-        try:
-            result = getattr(self.rtc, name)
-        except xmlrpc.client.ProtocolError as err:
-            xbmcgui.Dialog().ok('Error','An XMLRPC protocol error occurred. Submit a bug report!')
-            xbmc.log("An XMLRPC protocol error occurred")
-            xbmc.log("URL: %s" % err.url)
-            xbmc.log("HTTP/HTTPS headers: %s" % err.headers)
-            xbmc.log("Error code: %d" % err.errcode)
-            xbmc.log("Error message: %s" % err.errmsg)
-        except xmlrpc.client.Fault as err:
-            xbmcgui.Dialog().ok('Error','An XMLRPC fault occurred. Submit a bug report!')
-            xbmc.log("An XMLRPC fault occurred")
-            xbmc.log("Fault code: %d" % err.faultCode)
-            xbmc.log("Fault string: %s" % err.faultString)
-        except ConnectionRefusedError:
-            xbmcgui.Dialog().ok('Error','Connection to rTorrent refused. Check firewall settings.')
-        except TimeoutError:
-            xbmcgui.Dialog().ok('Error','Connection to rTorrent timed out. Check the host is correct.')
-        except:
-            xbmcgui.Dialog().ok('Error','Unexpected error occurred.')
-            xbmc.log("Unexpected error:", sys.exc_info()[0])
-            raise
+            self.connection = xmlrpc.client.ServerProxy(self.uri.geturl())
+    def call(self, method, *params):
+        ''' Makes the XMLRPC call and excessively catches and handles errors '''
+        attempts = 10
+        for attempt in range(attempts):
+            if attempt == attempts-1:
+                raise 'Connection attempts exhausted!'
+            try:
+                self.success = True
+                result = getattr(self.connection, method)(*params)
+                break
+            except xmlrpc.client.ProtocolError as err:
+                self.success = False
+                error_dialog(g.__lang__(30906), False)
+                xbmc.log("An XMLRPC protocol error occurred")
+                xbmc.log("URL: %s" % err.url)
+                xbmc.log("HTTP/HTTPS headers: %s" % err.headers)
+                xbmc.log("Error code: %d" % err.errcode)
+                xbmc.log("Error message: %s" % err.errmsg)
+                raise
+            except xmlrpc.client.Fault as err:
+                self.success = False
+                error_dialog(g.__lang__(30907), False)
+                xbmc.log("An XMLRPC fault occurred")
+                xbmc.log("Fault code: %d" % err.faultCode)
+                xbmc.log("Fault string: %s" % err.faultString)
+                raise
+            except ConnectionRefusedError:
+                self.success = False
+                if not error_dialog(g.__lang__(30908)):
+                    raise
+                self.make_connection()
+            except TimeoutError:
+                self.success = False
+                if not error_dialog(g.__lang__(30909)):
+                    raise
+                self.make_connection()
+            except:
+                self.success = False
+                xbmc.log("Unexpected error:", sys.exc_info()[0])
+                error_dialog(g.__lang__(30910), False)
+                raise
         return result
     def local(self):
         ''' Work out if rTorrent is running on the same machine. '''
@@ -47,25 +69,21 @@ class RTorrentKodiClient:
             return True
         return False
 
-
 def error_dialog(message, show_settings=True):
     ''' Display error dialog '''
     if show_settings:
         dialog = xbmcgui.Dialog().yesno(
-            g.__lang__(30155),
-            message, #g.__lang__(30156),
-            g.__lang__(30157),
-            g.__lang__(30158)
+            g.__lang__(30902),
+            message,
+            g.__lang__(30904),
+            g.__lang__(30903),
         )
         if dialog:
             g.__addon__.openSettings()
-            xbmc.executebuiltin('RunAddon(%s)' % g.__addonID__)
-            sys.exit()
-        else:
-            sys.exit()
+            return True
     else:
         xbmcgui.Dialog().ok(
-            g.__lang__(30155),
-            message, #g.__lang__(30156),
+            g.__lang__(30902),
+            message,
         )
-        sys.exit()
+    return False

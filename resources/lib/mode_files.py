@@ -9,7 +9,7 @@ from . import globals as g
 def main(digest,numfiles):
     '''For files inside a multi-file torrent'''
     files = []
-    files = g.rtc.f.multicall(
+    files = g.rtc.call('f.multicall',
         digest,
         1,
         "f.path=",
@@ -37,13 +37,13 @@ def main(digest,numfiles):
         context_menu = [
             (g.__lang__(30120),
                 f.run_string('action',
-                {'method': 'file_priority', 'file_hash': f.file_hash(digest, i), 'priority': 2})),
+                {'method': 'f_priority', 'file_hash': f.file_hash(digest, i), 'priority': 2})),
             (g.__lang__(30121),
                 f.run_string('action',
-                {'method': 'file_priority', 'file_hash': f.file_hash(digest, i), 'priority': 1})),
+                {'method': 'f_priority', 'file_hash': f.file_hash(digest, i), 'priority': 1})),
             (g.__lang__(30124),
                 f.run_string('action',
-                {'method': 'file_priority', 'file_hash': f.file_hash(digest, i), 'priority': 0}))]
+                {'method': 'f_priority', 'file_hash': f.file_hash(digest, i), 'priority': 0}))]
         list_item.addContextMenuItems(items=context_menu,replaceItems=True)
         list_item.setInfo('video',{'title':li_name,'size':f_size_bytes})
         if not xbmcplugin.addDirectoryItem(int(sys.argv[1]),

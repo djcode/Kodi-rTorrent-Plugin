@@ -61,12 +61,13 @@ def d_multicall_dict(view='main', args=None):
     ''' Returns multicalls as a list of dicts '''
     args = args or []
     output = []
-    rows =  g.rtc.d.multicall2('',view, *args)
-    for row in rows:
-        row_dict= {}
-        for idx, arg in enumerate(args):
-            row_dict.update({clean_command(arg): row[idx]})
-        output.append(row_dict)
+    rows =  g.rtc.call('d.multicall2', '', view, *args)
+    if g.rtc.success:
+        for row in rows:
+            row_dict= {}
+            for idx, arg in enumerate(args):
+                row_dict.update({clean_command(arg): row[idx]})
+            output.append(row_dict)
     return output
 
 def clean_command(name):
@@ -83,4 +84,4 @@ def play_file(url):
         elif 'video' in mimetype or 'audio' in mimetype:
             xbmc.Player().play(url)
     else:
-        xbmcgui.Dialog().ok('Error', 'Unable to play file.')
+        xbmcgui.Dialog().ok(g.__lang__(30900), g.__lang__(30901))
