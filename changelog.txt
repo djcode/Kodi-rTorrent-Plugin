@@ -1,4 +1,7 @@
-2.21.9 - 2021/09/09
+19.21.10 - 2021/10/11
+* Added Korean and Russian translations from Weblate
+
+19.21.9 - 2021/09/09
 * So many changes! Basically a complete rewrite.
 * Updated all code to work with Python 3 and Kodi 19
 * Added support to talk to XMLRPC over HTTP

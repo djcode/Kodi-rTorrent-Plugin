@@ -14,8 +14,8 @@ __addonID__= "plugin.program.rtorrent"
 __author__ = "Daniel Jolly"
 __url__ = "http://www.danieljolly.com"
 __credits__ = "See README"
-__version__ = "19.21.9"
-__date__ = "09/09/2021"
+__version__ = "19.21.10"
+__date__ = "11/10/2021"
 
 #Set a variable for Addon info and language strings
 __addon__ = xbmcaddon.Addon( __addonID__ )
