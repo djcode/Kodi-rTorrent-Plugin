@@ -34,7 +34,9 @@ msgid "URI"
 msgstr ""
 
 msgctxt "#30001"
-msgid "SCGI and HTTP protocols supported.\nExamples: http://host:port, scgi://host:port, scgi:///path/to/socket"
+msgid ""
+"SCGI and HTTP protocols supported.\n"
+"Examples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 msgstr ""
 
 msgctxt "#30004"
@@ -158,5 +160,3 @@ msgstr ""
 msgctxt "#30910"
 msgid "Unexpected error occurred."
 msgstr ""
-
-# --- ERROR DIALOG END
