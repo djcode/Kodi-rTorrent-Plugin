@@ -16,6 +16,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==1 || n%10==1 ? 0 : 1;\n"
 
+msgctxt "Addon Summary"
+msgid "rTorrent Control Plugin"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "A simple plugin for interacting with rTorrent over HTTP or SCGI."
+msgstr ""
+
+msgctxt "Addon Disclaimer"
+msgid "Requires an rTorrent instance with XMLRPC enabled."
+msgstr ""
+
 # --- SETTINGS START
 msgctxt "#30000"
 msgid "URI"
