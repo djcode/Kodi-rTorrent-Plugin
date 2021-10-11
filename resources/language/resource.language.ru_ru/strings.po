@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rTorrent Plugin\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: xbmc@danieljolly.com\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2021-10-10 08:36+0000\n"
 "Last-Translator: Dmitry Petrov <dimakrm361@gmail.com>\n"
@@ -35,7 +35,9 @@ msgid "URI"
 msgstr "Ссылка"
 
 msgctxt "#30001"
-msgid "SCGI and HTTP protocols supported.\nExamples: http://host:port, scgi://host:port, scgi:///path/to/socket"
+msgid ""
+"SCGI and HTTP protocols supported.\n"
+"Examples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 msgstr ""
 "Поддерживаются протоколы SCGI и HTTP.\n"
 "Примеры: http://host:port, scgi://host:port, scgi:///path/to/socket"
@@ -161,5 +163,3 @@ msgstr "Истекло время на ожидание соединения с 
 msgctxt "#30910"
 msgid "Unexpected error occurred."
 msgstr "Произошла неожиданная ошибка."
-
-# --- ERROR DIALOG END

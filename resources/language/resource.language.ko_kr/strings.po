@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rTorrent Plugin\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: xbmc@danieljolly.com\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2021-10-10 08:36+0000\n"
 "Last-Translator: Minho Park <parkmino@gmail.com>\n"
@@ -35,7 +35,9 @@ msgid "URI"
 msgstr "URI"
 
 msgctxt "#30001"
-msgid "SCGI and HTTP protocols supported.\nExamples: http://host:port, scgi://host:port, scgi:///path/to/socket"
+msgid ""
+"SCGI and HTTP protocols supported.\n"
+"Examples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 msgstr ""
 "SCGI 및 HTTP 프로토콜이 지원됩니다.\n"
 "예: http://host:port, scgi://host:port, scgi:///path/to/socket"
@@ -161,5 +163,3 @@ msgstr "rTorrent에 대한 연결 시간이 초과되었습니다. 호스트가 
 msgctxt "#30910"
 msgid "Unexpected error occurred."
 msgstr "예기치 않은 오류가 발생했습니다."
-
-# --- ERROR DIALOG END
