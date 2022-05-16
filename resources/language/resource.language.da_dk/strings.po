@@ -5,158 +5,161 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rTorrent Plugin\n"
-"Report-Msgid-Bugs-To: xbmc@danieljolly.com\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-12-25 00:13+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-program/plugin-program-rtorrent/da_dk/>\n"
 "Language: da_dk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgctxt "Addon Summary"
 msgid "rTorrent Control Plugin"
-msgstr ""
+msgstr "rTorrent Kontrol-plugin"
 
 msgctxt "Addon Description"
 msgid "A simple plugin for interacting with rTorrent over HTTP or SCGI."
-msgstr ""
+msgstr "Et simpelt plugin til interaktion med rTorrent via HTTP eller SCGI."
 
 msgctxt "Addon Disclaimer"
 msgid "Requires an rTorrent instance with XMLRPC enabled."
-msgstr ""
+msgstr "Kræver en rTorrent-instans med XMLRPC aktiveret."
 
 # --- SETTINGS START
 msgctxt "#30000"
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 msgctxt "#30001"
 msgid ""
 "SCGI and HTTP protocols supported.\n"
 "Examples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 msgstr ""
+"SCGI- og HTTP-protokoller understøttes.\n"
+"Eksempler: http://host:port, scgi://host:port, scgi:///sti/til/socket"
 
 msgctxt "#30004"
 msgid "Downloading"
-msgstr ""
+msgstr "Henter"
 
 msgctxt "#30005"
 msgid "Complete"
-msgstr ""
+msgstr "Komplet"
 
 msgctxt "#30040"
 msgid "Remote Folders (If rTorrent is on a remote computer)"
-msgstr ""
+msgstr "Netværksmapper (hvis rTorrent er på en netværkscomputer)"
 
 msgctxt "#30080"
 msgid "Connection"
-msgstr ""
+msgstr "Forbindelse"
 
 msgctxt "#30081"
 msgid "Remote"
-msgstr ""
+msgstr "Netværk"
 
 # --- SETTINGS END
 # --- CONTEXT MENU START
 msgctxt "#30100"
 msgid "Start Download"
-msgstr ""
+msgstr "Start download"
 
 msgctxt "#30101"
 msgid "Stop Download"
-msgstr ""
+msgstr "Stop download"
 
 msgctxt "#30102"
 msgid "Erase Download"
-msgstr ""
+msgstr "Slet download"
 
 msgctxt "#30120"
 msgid "Set Priority: High"
-msgstr ""
+msgstr "Indstil prioritet: Høj"
 
 msgctxt "#30121"
 msgid "Set Priority: Normal"
-msgstr ""
+msgstr "Indstil prioritet: Normal"
 
 msgctxt "#30122"
 msgid "Set Priority: Low"
-msgstr ""
+msgstr "Indstil prioritet: Lav"
 
 msgctxt "#30123"
 msgid "Set Priority: Idle"
-msgstr ""
+msgstr "Indstil prioritet: Inaktiv"
 
 msgctxt "#30124"
 msgid "Set Priority: Don't Download"
-msgstr ""
+msgstr "Indstil prioritet: Download ikke"
 
 msgctxt "#30150"
 msgid "Play File"
-msgstr ""
+msgstr "Afspil fil"
 
 # --- CONTEXT MENU END
 # --- WARNING DIALOG START
 msgctxt "#30151"
 msgid "This file has not downloaded completely."
-msgstr ""
+msgstr "Denne fil er ikke downloadet fuldstændigt."
 
 msgctxt "#30152"
 msgid "Are you sure you want to play it?"
-msgstr ""
+msgstr "Er du sikker på at du vil afspille?"
 
 msgctxt "#30153"
 msgid "Delete Download"
-msgstr ""
+msgstr "Slet download"
 
 msgctxt "#30154"
 msgid "Are you sure you want to delete this download?"
-msgstr ""
+msgstr "Er du sikker på at du vil slette denne download?"
 
 # --- WARNING DIALOG END
 # --- ERROR DIALOG START
 msgctxt "#30900"
 msgid "Error!"
-msgstr ""
+msgstr "Fejl!"
 
 msgctxt "#30901"
 msgid "Unable to play file."
-msgstr ""
+msgstr "Kan ikke afspille fil."
 
 msgctxt "#30902"
 msgid "Connection Failed"
-msgstr ""
+msgstr "Forbindelse mislykkedes"
 
 msgctxt "#30903"
 msgid "Check settings..."
-msgstr ""
+msgstr "Kontroller indstillinger..."
 
 msgctxt "#30904"
 msgid "Exit"
-msgstr ""
+msgstr "Afslut"
 
 msgctxt "#30905"
 msgid "Something went wrong."
-msgstr ""
+msgstr "Noget gik galt."
 
 msgctxt "#30906"
 msgid "An XMLRPC protocol error occurred. Submit a bug report!"
-msgstr ""
+msgstr "Der opstod en XMLRPC-protokolfejl. Indsend en fejlrapport!"
 
 msgctxt "#30907"
 msgid "An XMLRPC fault occurred. Submit a bug report!"
-msgstr ""
+msgstr "Der opstod en XMLRPC-fejl. Indsend en fejlrapport!"
 
 msgctxt "#30908"
 msgid "Connection to rTorrent refused. Check firewall settings."
-msgstr ""
+msgstr "Forbindelse til rTorrent nægtet. Kontroller indstillinger for firewall."
 
 msgctxt "#30909"
 msgid "Connection to rTorrent timed out. Check the host is correct."
-msgstr ""
+msgstr "Forbindelsen til rTorrent fik timeout. Kontroller at værten er korrekt."
 
 msgctxt "#30910"
 msgid "Unexpected error occurred."
-msgstr ""
+msgstr "Der opstod en uventet fejl."
