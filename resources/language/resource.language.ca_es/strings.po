@@ -5,158 +5,161 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rTorrent Plugin\n"
-"Report-Msgid-Bugs-To: xbmc@danieljolly.com\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-08-11 19:14+0000\n"
+"Last-Translator: Xean <xeanhort007@gmail.com>\n"
+"Language-Team: Catalan (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-program/plugin-program-rtorrent/ca_es/>\n"
 "Language: ca_es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.13\n"
 
 msgctxt "Addon Summary"
 msgid "rTorrent Control Plugin"
-msgstr ""
+msgstr "Connector pel control de rTorrent"
 
 msgctxt "Addon Description"
 msgid "A simple plugin for interacting with rTorrent over HTTP or SCGI."
-msgstr ""
+msgstr "Un complement senzill per interactuar amb rTorrent mitjançant HTTP o SCGI."
 
 msgctxt "Addon Disclaimer"
 msgid "Requires an rTorrent instance with XMLRPC enabled."
-msgstr ""
+msgstr "Requereix una instància rTorrent amb XMLRPC habilitat."
 
 # --- SETTINGS START
 msgctxt "#30000"
 msgid "URI"
-msgstr ""
+msgstr "URI"
 
 msgctxt "#30001"
 msgid ""
 "SCGI and HTTP protocols supported.\n"
 "Examples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 msgstr ""
+"S'admeten protocols SCGI i HTTP.\n"
+"Exemples: http://host:port, scgi://host:port, scgi:///path/to/socket"
 
 msgctxt "#30004"
 msgid "Downloading"
-msgstr ""
+msgstr "Baixant"
 
 msgctxt "#30005"
 msgid "Complete"
-msgstr ""
+msgstr "Completat"
 
 msgctxt "#30040"
 msgid "Remote Folders (If rTorrent is on a remote computer)"
-msgstr ""
+msgstr "Carpetes Remotes (si rTorrent es troba en un ordinador remot)"
 
 msgctxt "#30080"
 msgid "Connection"
-msgstr ""
+msgstr "Connexió"
 
 msgctxt "#30081"
 msgid "Remote"
-msgstr ""
+msgstr "Remot"
 
 # --- SETTINGS END
 # --- CONTEXT MENU START
 msgctxt "#30100"
 msgid "Start Download"
-msgstr ""
+msgstr "Inicia la baixada"
 
 msgctxt "#30101"
 msgid "Stop Download"
-msgstr ""
+msgstr "Atura la baixada"
 
 msgctxt "#30102"
 msgid "Erase Download"
-msgstr ""
+msgstr "Esborra la baixada"
 
 msgctxt "#30120"
 msgid "Set Priority: High"
-msgstr ""
+msgstr "Estableix prioritat: Alta"
 
 msgctxt "#30121"
 msgid "Set Priority: Normal"
-msgstr ""
+msgstr "Estableix prioritat: Normal"
 
 msgctxt "#30122"
 msgid "Set Priority: Low"
-msgstr ""
+msgstr "Estableix prioritat: Baixa"
 
 msgctxt "#30123"
 msgid "Set Priority: Idle"
-msgstr ""
+msgstr "Estableix prioritat: Inactiu"
 
 msgctxt "#30124"
 msgid "Set Priority: Don't Download"
-msgstr ""
+msgstr "Estableix prioritat: No baixar"
 
 msgctxt "#30150"
 msgid "Play File"
-msgstr ""
+msgstr "Reproduir Fitxer"
 
 # --- CONTEXT MENU END
 # --- WARNING DIALOG START
 msgctxt "#30151"
 msgid "This file has not downloaded completely."
-msgstr ""
+msgstr "Aquest fitxer no s'ha baixat del tot."
 
 msgctxt "#30152"
 msgid "Are you sure you want to play it?"
-msgstr ""
+msgstr "Segur que el voleu reproduir?"
 
 msgctxt "#30153"
 msgid "Delete Download"
-msgstr ""
+msgstr "Esborra la baixada"
 
 msgctxt "#30154"
 msgid "Are you sure you want to delete this download?"
-msgstr ""
+msgstr "Segur que vols suprimir aquesta baixada?"
 
 # --- WARNING DIALOG END
 # --- ERROR DIALOG START
 msgctxt "#30900"
 msgid "Error!"
-msgstr ""
+msgstr "Error!"
 
 msgctxt "#30901"
 msgid "Unable to play file."
-msgstr ""
+msgstr "Impossible reproduir el fitxer."
 
 msgctxt "#30902"
 msgid "Connection Failed"
-msgstr ""
+msgstr "La connexió ha fallat"
 
 msgctxt "#30903"
 msgid "Check settings..."
-msgstr ""
+msgstr "Comprova la configuració..."
 
 msgctxt "#30904"
 msgid "Exit"
-msgstr ""
+msgstr "Sortir"
 
 msgctxt "#30905"
 msgid "Something went wrong."
-msgstr ""
+msgstr "Alguna cosa ha anat malament."
 
 msgctxt "#30906"
 msgid "An XMLRPC protocol error occurred. Submit a bug report!"
-msgstr ""
+msgstr "Error del protocol XMLRPC. Envia l'informe de l'error!"
 
 msgctxt "#30907"
 msgid "An XMLRPC fault occurred. Submit a bug report!"
-msgstr ""
+msgstr "S'ha produït un error del XMLRPC. Envia l'informe de l'error!"
 
 msgctxt "#30908"
 msgid "Connection to rTorrent refused. Check firewall settings."
-msgstr ""
+msgstr "S'ha rebutjat la connexió a rTorrent. Comprova la configuració del tallafoc."
 
 msgctxt "#30909"
 msgid "Connection to rTorrent timed out. Check the host is correct."
-msgstr ""
+msgstr "La connexió a rTorrent ha esgotat el temps d'espera. Comprova que l'amfitrió és correcte."
 
 msgctxt "#30910"
 msgid "Unexpected error occurred."
-msgstr ""
+msgstr "Hi ha hagut un error inesperat."
