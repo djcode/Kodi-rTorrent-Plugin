@@ -5,16 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rTorrent Plugin\n"
-"Report-Msgid-Bugs-To: xbmc@danieljolly.com\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-09-19 20:11+0000\n"
+"Last-Translator: Jose Riha <jose1711@gmail.com>\n"
+"Language-Team: Slovak <https://kodi.weblate.cloud/projects/kodi-add-ons-program/plugin-program-rtorrent/sk_sk/>\n"
 "Language: sk_sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 5.0.2\n"
 
 msgctxt "Addon Summary"
 msgid "rTorrent Control Plugin"
@@ -31,7 +32,7 @@ msgstr ""
 # --- SETTINGS START
 msgctxt "#30000"
 msgid "URI"
-msgstr ""
+msgstr "Adresa URI"
 
 msgctxt "#30001"
 msgid ""
@@ -41,105 +42,105 @@ msgstr ""
 
 msgctxt "#30004"
 msgid "Downloading"
-msgstr ""
+msgstr "Sťahovanie"
 
 msgctxt "#30005"
 msgid "Complete"
-msgstr ""
+msgstr "Dokončené"
 
 msgctxt "#30040"
 msgid "Remote Folders (If rTorrent is on a remote computer)"
-msgstr ""
+msgstr "Vzdialené priečinky (ak je rTorrent na vzdialenom počítači)"
 
 msgctxt "#30080"
 msgid "Connection"
-msgstr ""
+msgstr "Pripojenie"
 
 msgctxt "#30081"
 msgid "Remote"
-msgstr ""
+msgstr "Vzdialené"
 
 # --- SETTINGS END
 # --- CONTEXT MENU START
 msgctxt "#30100"
 msgid "Start Download"
-msgstr ""
+msgstr "Spustiť sťahovanie"
 
 msgctxt "#30101"
 msgid "Stop Download"
-msgstr ""
+msgstr "Zastaviť sťahovanie"
 
 msgctxt "#30102"
 msgid "Erase Download"
-msgstr ""
+msgstr "Odstrániť stiahnutie"
 
 msgctxt "#30120"
 msgid "Set Priority: High"
-msgstr ""
+msgstr "Nastaviť prioritu: Vysoká"
 
 msgctxt "#30121"
 msgid "Set Priority: Normal"
-msgstr ""
+msgstr "Nastaviť prioritu: Normálna"
 
 msgctxt "#30122"
 msgid "Set Priority: Low"
-msgstr ""
+msgstr "Nastaviť prioritu: Nízka"
 
 msgctxt "#30123"
 msgid "Set Priority: Idle"
-msgstr ""
+msgstr "Nastaviť prioritu: Nečinné"
 
 msgctxt "#30124"
 msgid "Set Priority: Don't Download"
-msgstr ""
+msgstr "Nastaviť prioritu: Nesťahovať"
 
 msgctxt "#30150"
 msgid "Play File"
-msgstr ""
+msgstr "Prehrať súbor"
 
 # --- CONTEXT MENU END
 # --- WARNING DIALOG START
 msgctxt "#30151"
 msgid "This file has not downloaded completely."
-msgstr ""
+msgstr "Tento súbor nebol kompletne stiahnutý."
 
 msgctxt "#30152"
 msgid "Are you sure you want to play it?"
-msgstr ""
+msgstr "Naozaj ho chcete prehrať?"
 
 msgctxt "#30153"
 msgid "Delete Download"
-msgstr ""
+msgstr "Odstrániť stiahnutie"
 
 msgctxt "#30154"
 msgid "Are you sure you want to delete this download?"
-msgstr ""
+msgstr "Naozaj chcete odstrániť toto stiahnutie?"
 
 # --- WARNING DIALOG END
 # --- ERROR DIALOG START
 msgctxt "#30900"
 msgid "Error!"
-msgstr ""
+msgstr "Chyba!"
 
 msgctxt "#30901"
 msgid "Unable to play file."
-msgstr ""
+msgstr "Súbor nebolo možné prehrať."
 
 msgctxt "#30902"
 msgid "Connection Failed"
-msgstr ""
+msgstr "Chyba spojenia"
 
 msgctxt "#30903"
 msgid "Check settings..."
-msgstr ""
+msgstr "Skontrolujte nastavenia..."
 
 msgctxt "#30904"
 msgid "Exit"
-msgstr ""
+msgstr "Ukončiť"
 
 msgctxt "#30905"
 msgid "Something went wrong."
-msgstr ""
+msgstr "Niečo sa pokazilo."
 
 msgctxt "#30906"
 msgid "An XMLRPC protocol error occurred. Submit a bug report!"
@@ -159,4 +160,4 @@ msgstr ""
 
 msgctxt "#30910"
 msgid "Unexpected error occurred."
-msgstr ""
+msgstr "Nastala neočakávaná chyba."
